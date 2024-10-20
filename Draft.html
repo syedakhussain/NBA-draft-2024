@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Fantasy Teams - Lakers Theme</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #552583; /* Lakers Purple */
+            color: #FDB927; /* Lakers Gold */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #FDB927;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            color: #000000;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #FDB927; /* Lakers Gold */
+            color: #552583; /* Lakers Purple */
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .dropdown {
+            margin: 10px 0;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Tribute to Kobe */
+        .tribute {
+            background-color: #FDB927;
+            color: #552583;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .tribute img {
+            max-width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tribute h3 {
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #FDB927;
+            background-color: #552583;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>NBA Fantasy Teams - Lakers Edition</h1>
+
+    <!-- Dropdown for positions -->
+    <label for="positionSelect">Select a position:</label>
+    <select id="positionSelect" class="dropdown" onchange="showTable(this.value)">
+        <option value="">Select a position</option>
+        <option value="PG">Point Guard</option>
+        <option value="SG">Shooting Guard</option>
+        <option value="SF">Small Forward</option>
+        <option value="PF">Power Forward</option>
+        <option value="C">Center</option>
+    </select>
+
+    <!-- Tables for each position -->
+    <div id="PG" style="display:none;">
+        <h2>Point Guards</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Starter</th>
+                    <th>Backup</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Team 1</td><td>Luka Dončić</td><td>Damian Lillard</td></tr>
+                <tr><td>Team 2</td><td>Tyrese Haliburton</td><td>Fred VanVleet</td></tr>
+                <tr><td>Team 3</td><td>Stephen Curry</td><td>Jalen Brunson</td></tr>
+                <tr><td>Team 4</td><td>Shai Gilgeous-Alexander</td><td>Darius Garland</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="SG" style="display:none;">
+        <h2>Shooting Guards</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Starter</th>
+                    <th>Backup</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Team 1</td><td>Donovan Mitchell</td><td>Zach LaVine</td></tr>
+                <tr><td>Team 2</td><td>Anthony Edwards</td><td>Desmond Bane</td></tr>
+                <tr><td>Team 3</td><td>Devin Booker</td><td>Klay Thompson</td></tr>
+                <tr><td>Team 4</td><td>Jaylen Brown</td><td>Bradley Beal</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="SF" style="display:none;">
+        <h2>Small Forwards</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Starter</th>
+                    <th>Backup</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Team 1</td><td>Jayson Tatum</td><td>Kawhi Leonard</td></tr>
+                <tr><td>Team 2</td><td>LeBron James</td><td>Andrew Wiggins</td></tr>
+                <tr><td>Team 3</td><td>Kevin Durant</td><td>DeMar DeRozan</td></tr>
+                <tr><td>Team 4</td><td>Jimmy Butler</td><td>Michael Porter Jr.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="PF" style="display:none;">
+        <h2>Power Forwards</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Starter</th>
+                    <th>Backup</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Team 1</td><td>Giannis Antetokounmpo</td><td>Lauri Markkanen</td></tr>
+                <tr><td>Team 2</td><td>Anthony Davis</td><td>Evan Mobley</td></tr>
+                <tr><td>Team 3</td><td>Zion Williamson</td><td>Jaren Jackson Jr.</td></tr>
+                <tr><td>Team 4</td><td>Paolo Banchero</td><td>John Collins</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="C" style="display:none;">
+        <h2>Centers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Starter</th>
+                    <th>Backup</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Team 1</td><td>Nikola Jokić</td><td>Domantas Sabonis</td></tr>
+                <tr><td>Team 2</td><td>Joel Embiid</td><td>Kristaps Porziņģis</td></tr>
+                <tr><td>Team 3</td><td>Karl-Anthony Towns</td><td>Deandre Ayton</td></tr>
+                <tr><td>Team 4</td><td>Bam Adebayo</td><td>Nikola Vučević</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tribute to Kobe Bryant -->
+    <div class="tribute">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Kobe_Bryant_2014.jpg/220px-Kobe_Bryant_2014.jpg" alt="Kobe Bryant">
+        <h3>In Honor of Kobe Bryant - The Black Mamba</h3>
+        <p>"Great things come from hard work and perseverance. No excuses." - Kobe Bryant</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Lakers Fantasy Basketball - In Memory of Kobe Bryant</p>
+</footer>
+
+<script>
+    function showTable(position) {
+        var positions = ["PG", "SG", "SF", "PF", "C"];
+        positions.forEach(function(p) {
+            document.getElementById(p).style.display = "none";
+        });
+        if (position) {
+            document.getElementById(position).style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
